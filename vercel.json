@@ -1,7 +1,15 @@
 {
 	"version": 2,
 	"installCommand": "npm i  --legacy-peer-deps ",
-	"outputDirectory": "dist",
+	"builds": [
+		{
+			"config": {
+				"installCommand": "npm i --legacy-peer-deps --force"
+			},
+			"src": "src/main.ts",
+			"use": "@vercel/node"
+		}
+	],
 	"routes": [
 		{
 			"src": "/(.*)",
