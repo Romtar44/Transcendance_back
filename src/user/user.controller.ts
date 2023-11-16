@@ -12,7 +12,7 @@ import {
   Res
 } from "@nestjs/common";
 import { Response } from "express";
-import { changeEmailDTO, changeThemeDTO, changeUsenameDTO, createUserDTO } from "src/lib/DTOs/user.dto";
+import { changeEmailDTO, changeThemeDTO, changeUsenameDTO, createUserDTO } from "../lib/DTOs/user.dto";
 import { UserService } from "./user.service";
 import { MyAuthGuard } from "src/auth/guards/jwt.auth.guard";
 import { comparePassword } from "src/lib/utils";
