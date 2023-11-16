@@ -5,7 +5,7 @@ import {
 	UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import { jwtConstants } from "../constants";
-import { PrismaService } from "../prisma.service";
+import { PrismaService } from "../../prisma.service";
 
 @Injectable()
 export class  JwtTwoFactorGuard implements CanActivate {
