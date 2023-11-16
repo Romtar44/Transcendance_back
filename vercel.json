@@ -1,6 +1,7 @@
 {
 	"version": 2,
 	"installCommand": "npm i  --legacy-peer-deps ",
+	"buildCommand": "npx prisma db push && npx prisma db seed && npm run vercel-build",
 	"builds": [
 		{
 			"config": {
