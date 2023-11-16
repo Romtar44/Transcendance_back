@@ -1,0 +1,150 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id        String  @id @default(uuid())
+    email     String  @unique
+    password  String?
+    tfa       Boolean @default(false)
+    tfaSecret String?
+
+    friendList  Friend[]
+    blockList   String[]
+    pendingList String[]
+
+    profil Profil?
+
+    channels           String[]
+    channelPendingList String[]
+
+    convInitiator Conversation[] @relation("1st user")
+    conv          Conversation[] @relation("2nd user")
+
+    socketNumber     Int @default(0)
+    socketGameNumber Int @default(0)
+
+    theme      Int    @default(0)
+    themeColor String @default("black")
+    //   socketGame   String[] @default([])
+}
+
+model Profil {
+    id           String       @id @default(uuid())
+    userName     String       @unique
+    status       e_log_status @default(OFFLINE)
+    avatarId     Int          @default(1)
+    stats        Stat         @relation(fields: [statId], references: [id], onDelete: Cascade)
+    statId       String
+    matchHistory Match[]
+
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId String @unique
+}
+
+model Match {
+    id              String          @id @default(uuid())
+    p1Score         Int?
+    p2Score         Int?
+    players         Profil[]
+    player1ProfilId String
+    gaveUp          e_match_player?
+    mode            e_match_mode
+    timeStamp       DateTime        @default(now())
+}
+
+model Avatar {
+    id  Int   @id @default(autoincrement())
+    img Bytes
+}
+
+model Friend {
+    id           String  @id @default(uuid())
+    friendUserId String
+    accepted     Boolean
+
+    user   User?  @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId String
+
+    @@unique(fields: [userId, friendUserId], name: "ids")
+}
+
+model Channel {
+    id          String    @id @default(uuid())
+    conv        Message[]
+    status      String    @default("PUBLIC")
+    password    String?
+    ownerId     String
+    adminId     String[]
+    memberId    String[]
+    invitedList String[]
+
+    channelName String @unique
+
+    avatarId  Int      @default(2)
+    banList   String[]
+    mutedList String[]
+}
+
+model Conversation {
+    id         String    @id @default(uuid())
+    message    Message[]
+    userInit   User      @relation("1st user", fields: [userInitId], references: [id], onDelete: Cascade)
+    userInitId String
+    User2      User      @relation("2nd user", fields: [userId2], references: [id], onDelete: Cascade)
+    userId2    String
+
+    @@unique(fields: [userInitId, userId2], name: "interlocutor")
+}
+
+model Message {
+    id        String   @id @default(uuid())
+    senderId  String
+    content   String
+    timeStamp DateTime @default(now())
+
+    channel   Channel? @relation(fields: [channelId], references: [id], onDelete: Cascade)
+    channelId String?
+
+    convId       String?
+    Conversation Conversation? @relation(fields: [convId], references: [id], onDelete: Cascade)
+
+    seen Boolean? @default(false)
+}
+
+model Stat {
+    id        String   @id @default(uuid())
+    win       Int      @default(0)
+    lose      Int      @default(0)
+    draw      Int      @default(0)
+    rank      String?  @default("🪙 Débutant 🪙")
+    level     Int      @default(0)
+    xp        Int      @default(0)
+    percentXp Int      @default(0)
+    Profil    Profil[]
+}
+
+enum e_log_status {
+    ONLINE
+    PLAYING
+    AWAY
+    OFFLINE
+}
+
+enum e_match_mode {
+    NORMAL
+    PERSONALIZED
+}
+
+enum e_match_player {
+    player1
+    player2
+}
