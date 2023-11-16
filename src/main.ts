@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser';
 
 require("dotenv").config({ path: __dirname + "/./../../.env" });
 
-async function bootstrap() {
+export async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 
 	app.useGlobalPipes(new ValidationPipe());
