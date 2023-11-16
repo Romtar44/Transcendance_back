@@ -1,10 +1,10 @@
 {
 	"version": 2,
-	"installCommand": "npm config set legacy-peer-deps true && npm i",
+	"installCommand": "npm i  --legacy-peer-deps --force @vercel/node",
 	"builds": [
 		{
 			"config": {
-				"installCommand": "npm i --legacy-peer-deps --force"
+				"installCommand": "npm i --legacy-peer-deps --force @vercel/node"
 			},
 			"src": "src/main.ts",
 			"use": "@vercel/node"
