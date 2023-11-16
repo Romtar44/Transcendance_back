@@ -3,8 +3,11 @@
 	"installCommand": "npm i  --legacy-peer-deps ",
 	"builds": [
 		{
+			"config": {
+				"installCommand": "npm i --legacy-peer-deps --force"
+			},
 			"src": "src/main.ts",
-			"use": " --legacy-peer-deps @vercel/node"
+			"use": "@vercel/node"
 		}
 	],
 	"routes": [
