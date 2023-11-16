@@ -8,8 +8,8 @@ import {
 	Param,
 } from "@nestjs/common"
 import { ChannelService } from "./channel.service"
-import { MyAuthGuard } from "../auth/guards/jwt.auth.guard"
-import { createChannelDTO, manageChannelDTO, protectedChannelApplicationDTO, manageUserChannelDTO } from "../lib/DTOs/social.dto";
+import { MyAuthGuard } from "../../auth/guards/jwt.auth.guard"
+import { createChannelDTO, manageChannelDTO, protectedChannelApplicationDTO, manageUserChannelDTO } from "../../lib/DTOs/social.dto";
 
 @Controller("channel")
 export class ChannelController {
