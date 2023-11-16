@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { TfaService } from "./tfa.service";
 import { TfaController } from "./tfa.controller";
-import { PrismaService } from "src/prisma.service";
+import { PrismaService } from "../prisma.service";
 import { JwtTwoFaStrategy } from "../strategies/jwt-tfa.strategy";
 import { AuthModule } from "../auth.module";
 

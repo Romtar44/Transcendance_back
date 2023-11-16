@@ -13,7 +13,7 @@ import {
 import { MyAuthGuard } from "./guards/jwt.auth.guard";
 import { Response } from "express";
 import { AuthService } from "./auth.service";
-import { authDTO } from "src/lib/DTOs/auth.dto";
+import { authDTO } from "../lib/DTOs/auth.dto";
 import { SchoolAuthGuard } from "./guards/school.guards";
 import { JwtTwoFactorGuard } from "./guards/tfa.guard";
 

@@ -9,15 +9,15 @@ import { ConnectedSocket,
 import { Socket, Server } from 'socket.io'
 import { forwardRef, Inject, UseGuards } from "@nestjs/common";
 import { GatewayGuard} from "../auth/guards/gateway.guard";
-import { ConversationService } from "src/social/conversation/conversation.service";
-import { ProfilService } from "src/profil/profil.service";
+import { ConversationService } from "../social/conversation/conversation.service";
+import { ProfilService } from "../profil/profil.service";
 import {  e_log_status, e_match_player, Profil } from "@prisma/client";
 import { JwtService } from "@nestjs/jwt";
-import { verifyToken } from "src/lib/utils";
-import { PrismaService } from "src/prisma.service";
-import { ChannelService } from "src/social/channel/channel.service";
-import { MessageService } from "src/social/message/message.service";
-import { GameService, InitGame } from "src/game/game.service";
+import { verifyToken } from "../lib/utils";
+import { PrismaService } from "../prisma.service";
+import { ChannelService } from "../social/channel/channel.service";
+import { MessageService } from "../social/message/message.service";
+import { GameService, InitGame } from "../game/game.service";
 
 
 @WebSocketGateway({namespace: 'status', cors: true})

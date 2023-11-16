@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { e_match_player, Profil } from '@prisma/client';
-import { PlayerStatus } from 'src/gateways/events.gateway';
-import { matchSelect, profilSelect } from 'src/lib/select';
-import { PrismaService } from 'src/prisma.service';
+import { PlayerStatus } from '../gateways/events.gateway';
+import { matchSelect, profilSelect } from '../lib/select';
+import { PrismaService } from '../prisma.service';
 
 
 const ranks = [ "🪙 Débutant 🪙" , "🥉 Amateur 🥉" , "🥈 Confirmé 🥈" , "🥇 Expert 🥇" , "🏅 Maître 🏅"]

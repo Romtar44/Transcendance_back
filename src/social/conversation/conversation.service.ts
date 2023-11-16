@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from '../prisma.service';
 import { MessageService } from '../message/message.service';
 import { WsException } from '@nestjs/websockets';
-import { userSelect } from 'src/lib/select';
+import { userSelect } from '../lib/select';
 import { Friend } from '@prisma/client';
 
 @Injectable()

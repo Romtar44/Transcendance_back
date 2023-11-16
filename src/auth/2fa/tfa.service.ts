@@ -2,9 +2,9 @@ import { HttpException, Injectable } from "@nestjs/common";
 import { authenticator } from "otplib";
 import { toFileStream } from 'qrcode';
 import { Response } from 'express';
-import { PrismaService } from "src/prisma.service";
+import { PrismaService } from "../prisma.service";
 import { AuthService } from "../auth.service";
-import { userSelect } from "src/lib/select";
+import { userSelect } from "../lib/select";
 import { JwtService } from "@nestjs/jwt";
 
 @Injectable()

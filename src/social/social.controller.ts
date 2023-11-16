@@ -5,8 +5,8 @@ import { 	Controller,
 	Body,
 	UseGuards, } from '@nestjs/common';
 import { SocialService } from './social.service';
-import { MyAuthGuard } from "src/auth/guards/jwt.auth.guard";
-import { manageUserDTO } from "src/lib/DTOs/social.dto";
+import { MyAuthGuard } from "../auth/guards/jwt.auth.guard";
+import { manageUserDTO } from "../lib/DTOs/social.dto";
 
 @Controller('social')
 export class SocialController {

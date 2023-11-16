@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { Friend, Profil, User } from '@prisma/client';
-import { FriendGatewayService } from 'src/gateways/events.gateway';
-import { profilSelect, userSelect } from 'src/lib/select';
-import { PrismaService } from 'src/prisma.service';
+import { FriendGatewayService } from '../gateways/events.gateway';
+import { profilSelect, userSelect } from '../lib/select';
+import { PrismaService } from '../prisma.service';
 import { ConversationService } from './conversation/conversation.service';
 
 

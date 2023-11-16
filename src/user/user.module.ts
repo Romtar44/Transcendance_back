@@ -2,11 +2,11 @@ import { Module } from "@nestjs/common";
 import { UserService } from "./user.service";
 import { PrismaService } from "./../prisma.service";
 import { UserController } from "./user.controller";
-import { ProfilModule } from "src/profil/profil.module";
-import { ProfilService } from "src/profil/profil.service";
-import { AvatarModule } from "src/avatar/avatar.module";
-import { AvatarService } from "src/avatar/avatar.service";
-import { AuthModule } from "src/auth/auth.module";
+import { ProfilModule } from "../profil/profil.module";
+import { ProfilService } from "../profil/profil.service";
+import { AvatarModule } from "../avatar/avatar.module";
+import { AvatarService } from "../avatar/avatar.service";
+import { AuthModule } from "../auth/auth.module";
 
 
 @Module({

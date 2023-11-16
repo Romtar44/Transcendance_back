@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common"
-import { PrismaService } from "src/prisma.service"
-import { messageSelect } from "src/lib/select"
+import { PrismaService } from "../prisma.service"
+import { messageSelect } from "../lib/select"
 
 @Injectable()
 export class MessageService {
