@@ -2,11 +2,11 @@ FROM node
 
 WORKDIR /
 
-COPY package.json ./
+COPY package.json .
 
 RUN npm install --legacy-peer-deps
 
-COPY entrypoint.sh ./
+COPY entrypoint.sh .
 
 RUN chmod +x ./entrypoint.sh
 
