@@ -17,7 +17,7 @@ import {
 } from "@nestjs/common"
 import { AvatarService } from "./avatar.service"
 import { FileInterceptor } from "@nestjs/platform-express"
-import { MyAuthGuard } from "../auth/guards/jwt.auth.guard"
+import { MyAuthGuard } from "src/auth/guards/jwt.auth.guard"
 import { Response  } from 'express'
 
 @Controller("avatar")

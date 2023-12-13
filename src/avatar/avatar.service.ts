@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common"
-import { avatarSelect } from "../lib/select"
-import { PrismaService } from "../prisma.service"
+import { avatarSelect } from "src/lib/select"
+import { PrismaService } from "src/prisma.service"
 
 @Injectable()
 export class AvatarService {

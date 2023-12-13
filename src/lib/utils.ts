@@ -1,8 +1,8 @@
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { Socket } from 'socket.io';
-import { jwtConstants } from '../auth/constants';
-import { PrismaService } from '../prisma.service';
+import { jwtConstants } from 'src/auth/constants';
+import { PrismaService } from 'src/prisma.service';
 
 
 

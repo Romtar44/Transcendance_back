@@ -7,7 +7,7 @@ import {
 	UseGuards,
 	Request
 } from "@nestjs/common"
-import { MyAuthGuard } from "../auth/guards/jwt.auth.guard"
+import { MyAuthGuard } from "src/auth/guards/jwt.auth.guard"
 import { MatchService } from "./match.service"
 
 @Controller("match")

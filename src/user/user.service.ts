@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { PrismaService } from "./../prisma.service";
-import { messageSelect, profilSelect, userSelect } from "../lib/select";
-import { createUserDTO } from "../lib/DTOs/user.dto";
-import { hashPassword } from "../lib/utils";
-import { AuthService } from "../auth/auth.service";
+import { messageSelect, profilSelect, userSelect } from "src/lib/select";
+import { createUserDTO } from "src/lib/DTOs/user.dto";
+import { hashPassword } from "src/lib/utils";
+import { AuthService } from "src/auth/auth.service";
 import { cp } from "fs";
 import { Profil } from "@prisma/client";
 

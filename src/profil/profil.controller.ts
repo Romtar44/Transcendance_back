@@ -15,9 +15,9 @@ import {
 	UseGuards,
 } from "@nestjs/common"
 import { ProfilService } from "./profil.service"
-import { profilDTO } from "../lib/DTOs/profil.dto"
+import { profilDTO } from "src/lib/DTOs/profil.dto"
 import { FileInterceptor } from "@nestjs/platform-express"
-import { MyAuthGuard } from "../auth/guards/jwt.auth.guard"
+import { MyAuthGuard } from "src/auth/guards/jwt.auth.guard"
 
 @Controller("profil")
 export class ProfilController {

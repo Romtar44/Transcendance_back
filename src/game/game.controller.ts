@@ -1,14 +1,14 @@
 import { Controller, Get, UseGuards, Request, Body, Put, Res, Param, HttpException, HttpStatus } from '@nestjs/common';
-import { MyAuthGuard } from '../auth/guards/jwt.auth.guard';
-import { FriendGatewayService, GameGatewayService } from '../gateways/events.gateway';
+import { MyAuthGuard } from 'src/auth/guards/jwt.auth.guard';
+import { FriendGatewayService, GameGatewayService } from 'src/gateways/events.gateway';
 import { Response  } from 'express'
 import { GameService } from './game.service';
-import { defyDTO, startGameDTO } from '../lib/DTOs/game.dto';
-import { UserService } from '../user/user.service';
-import { SocialService } from '../social/social.service';
-import { PrismaService } from '../prisma.service';
+import { defyDTO, startGameDTO } from 'src/lib/DTOs/game.dto';
+import { UserService } from 'src/user/user.service';
+import { SocialService } from 'src/social/social.service';
+import { PrismaService } from 'src/prisma.service';
 import { Match } from '@prisma/client';
-import { matchSelect } from '../lib/select';
+import { matchSelect } from 'src/lib/select';
 
 
 

@@ -2,7 +2,7 @@ import { Body, Controller, Get, HttpException, Post, Req, Res, UnauthorizedExcep
 import { Response } from 'express';
 import { TfaService } from "./tfa.service";
 import { MyAuthGuard } from "../guards/jwt.auth.guard";
-import { TwoFaAuthDto } from "../../lib/DTOs/auth.dto";
+import { TwoFaAuthDto } from "src/lib/DTOs/auth.dto";
 import { JwtTwoFactorGuard } from "../guards/tfa.guard";
 
 @Controller('tfa')

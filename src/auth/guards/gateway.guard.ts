@@ -9,7 +9,7 @@ import {
 import { JwtService } from "@nestjs/jwt";
 import { jwtConstants } from "../constants";
 import { OnGatewayConnection, OnGatewayDisconnect, WebSocketGateway, WebSocketServer, WsException } from "@nestjs/websockets";
-import { PrismaService } from "../../prisma.service";
+import { PrismaService } from "src/prisma.service";
 import { Socket, Server } from 'socket.io'
 
 

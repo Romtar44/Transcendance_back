@@ -1,10 +1,10 @@
 import { Module } from "@nestjs/common";
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
-import { PrismaService } from "../prisma.service";
+import { PrismaService } from "src/prisma.service";
 import { JwtModule } from "@nestjs/jwt";
 import { jwtConstants } from "./constants";
-import { ProfilModule } from "../profil/profil.module";
+import { ProfilModule } from "src/profil/profil.module";
 import { SchoolStrategy } from "./strategies/school.strategy";
 import { JwtTwoFaStrategy } from "./strategies/jwt-tfa.strategy";
 

@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common"
 import { PrismaService } from "./../prisma.service"
-import { userSelect } from "../lib/select"
-import { profilDTO } from "../lib/DTOs/profil.dto"
-import { AvatarService } from "../avatar/avatar.service"
+import { userSelect } from "src/lib/select"
+import { profilDTO } from "src/lib/DTOs/profil.dto"
+import { AvatarService } from "src/avatar/avatar.service"
 import { e_log_status } from "@prisma/client"
 
 @Injectable()

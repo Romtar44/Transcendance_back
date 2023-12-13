@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common"
-import { PrismaService } from "../prisma.service"
-import { statSelect } from "../lib/select"
+import { PrismaService } from "src/prisma.service"
+import { statSelect } from "src/lib/select"
 
 @Injectable()
 export class StatService {

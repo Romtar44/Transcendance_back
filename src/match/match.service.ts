@@ -1,7 +1,7 @@
 import { HttpException, Injectable } from "@nestjs/common"
-import { matchSelect } from "../lib/select"
-import { PrismaService } from "../prisma.service"
-import { SocialService } from "../social/social.service"
+import { matchSelect } from "src/lib/select"
+import { PrismaService } from "src/prisma.service"
+import { SocialService } from "src/social/social.service"
 
 @Injectable()
 export class MatchService {
