@@ -13,10 +13,10 @@ async function bootstrap() {
 	app.enableShutdownHooks();
 	app.use(cookieParser());
 	app.enableCors({
-		origin: [`${process.env.FRONT_URL}`, `http://localhost:3333`, ` http://192.168.1.190:3333`],
+		origin: [`${process.env.FRONT_URL}`],
 		methods: "GET,HEAD,PUT,POST,DELETE,OPTIONS",
 		credentials: true,
 	});
-	await app.listen(3333);
+	await app.listen(process.env.PORT || 5000);
 }
 bootstrap();
