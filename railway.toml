@@ -1,3 +1,0 @@
-[build]
-builder = "dockerfile"
-buildCommand = "npm run build"
