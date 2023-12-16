@@ -35,7 +35,7 @@ export class AuthController {
 				response.user.profil.status = "ONLINE"
 			else response = {...response}
 			res.cookie("access_token", response.access_token, {
-				//domain: `${process.env.DOMAIN}`,
+				domain: `${process.env.DOMAIN}`,
 				httpOnly: false,
 				secure: false,
 				sameSite: "lax",
@@ -75,7 +75,7 @@ export class AuthController {
 
 
 		res.cookie("access_token", token, {
-		//domain: `${process.env.DOMAIN}`,
+		domain: `${process.env.DOMAIN}`,
 		httpOnly: false,
 		secure: false,
 		sameSite: "lax",
