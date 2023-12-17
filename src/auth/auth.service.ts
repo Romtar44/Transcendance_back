@@ -75,7 +75,6 @@ export class AuthService {
 
 			let userUsernameExists = await this.prisma.profil.findUnique({
 				where: {userName :username },
-				select: userSelect
 			});
 			let i = 1
 			while (userUsernameExists)
@@ -83,7 +82,6 @@ export class AuthService {
 				username = username + i.toString()
 				userUsernameExists = await this.prisma.profil.findUnique({
 					where: {userName :username },
-					select: userSelect
 				});
 				i = i + 1
 			}
