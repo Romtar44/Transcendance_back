@@ -88,6 +88,6 @@ export class AuthController {
 	@Get("/logout")
 	@UseGuards(MyAuthGuard)
 	async logout( @Res() res: Response) {
-		res.clearCookie("access_token").sendStatus(200)
+		res.clearCookie("access_token").sendStatus(200).end()
 	}
 }
