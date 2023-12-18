@@ -88,7 +88,8 @@ export class AuthController {
 	@Get("/logout")
 	@UseGuards(MyAuthGuard)
 	async logout( @Res() res: Response) {
-		console.log('logouttttt')
+		console.log('logouttttt',  res.cookie)
 		res.clearCookie("access_token").sendStatus(200)
+		console.log('cookie', res.cookie)
 	}
 }
